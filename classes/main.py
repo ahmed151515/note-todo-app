@@ -1,7 +1,6 @@
 import tkinter as tk
 from tkinter import ttk
 from addNote import addNote
-from addTodo import addTodo
 from noteHomePage import noteHomePage
 from todoHomePage import todoHomePage
 from note import Note

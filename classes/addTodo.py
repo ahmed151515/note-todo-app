@@ -2,9 +2,10 @@ import tkinter as tk
 from todo import Todo
 
 
-class addTodo(tk.Toplevel):
-    def __init__(self, ):
-        super().__init__()
+class addtodo(tk.Toplevel):
+
+    def _init_(self, ):
+        super()._init_()
         # self.root = tk.Tk()
 
         self.addTodoLebel = tk.Label(
@@ -25,4 +26,8 @@ class addTodo(tk.Toplevel):
         self.button.pack(padx=10, pady=10)
 
     def add_todo(self):
+        from todoHomePage import todoHomePage
+
         Todo.todohash[self.title.get()] = self.descraibe.get()
+        todoHomePage.ref(self.title.get())
+        self.destroy()
