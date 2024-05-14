@@ -1,24 +1,26 @@
 import tkinter as tk
 
-root = tk.Tk()
-root.title("section project")
-root.geometry("300x200")
-
-addTodoLebel = tk.Label(root, text="add Todo", font=("Arial", 16, "bold"))
-
-title = tk.Entry(root)
-details = tk.Entry(root)
-button = tk.Button(root, text='add')
-
-addTodoLebel.pack(padx=10, pady=10)
+class addTodo(tk.Frame):
+    def __init__(self, parent):
+        super().__init__(parent)
+        self.root = tk.Tk()
 
 
-title.insert(0, "todo")
-title.pack(padx=10, pady=10)
+        self.addTodoLebel = tk.Label(self.root, text="add Todo", font=("Arial", 16, "bold"))
+
+        self.title = tk.Entry(self.root)
+        self.details = tk.Entry(self.root)
+        self.button = tk.Button(self.root, text='add')
+
+        self.addTodoLebel.pack(padx=10, pady=10)
 
 
-details.insert(tk.END, "details")
-details.pack(padx=10, pady=10)
+        self.title.insert(0, "todo")
+        self.title.pack(padx=10, pady=10)
 
-button.pack(padx=10, pady=10)
-root.mainloop()
+
+        self.details.insert(tk.END, "details")
+        self.details.pack(padx=10, pady=10)
+
+        self.button.pack(padx=10, pady=10)
+

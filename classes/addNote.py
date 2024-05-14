@@ -1,23 +1,23 @@
 import tkinter as tk
+class addNote(tk.Frame):
+    def __init__(self, parent):
+        super().__init__(parent)
 
-root = tk.Tk()
-root.title("section project")
+        self.root = tk.Tk()
 
-addNoteLebel = tk.Label(root, text="add note", font=("Arial", 16, "bold"))
+        self.addNoteLebel = tk.Label(self.root, text="add note", font=("Arial", 16, "bold"))
+        
+        self.title = tk.Entry(self.root)
+        self.text = tk.Text(self.root)
+        self.button = tk.Button(self.root, text='add')
+        
+        self.addNoteLebel.pack(padx=10, pady=10)
+        
 
-title = tk.Entry(root)
-text = tk.Text(root)
-button = tk.Button(root, text='add')
+        self.title.insert(0, "note title")
+        self.title.pack(padx=10, pady=10)
 
-addNoteLebel.pack(padx=10, pady=10)
-
-# Set default text for title Entry widget
-title.insert(0, "note title")
-title.pack(padx=10, pady=10)
-
-# Set default text for text Text widget
-text.insert(tk.END, "note text")
-text.pack(padx=10, pady=10)
-
-button.pack(padx=10, pady=10)
-root.mainloop()
+        self.text.insert(tk.END, "note text")
+        self.text.pack(padx=10, pady=10)
+        
+        self.button.pack(padx=10, pady=10)
