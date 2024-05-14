@@ -6,13 +6,14 @@ from addTodo import addtodo
 
 class todoHomePage(tk.Frame):
 
-    def _init_(self, parent):
-        super()._init_(parent)
+    def __init__(self, parent):
+        super().__init__(parent)
 
         self.addNoteLebel = tk.Label(
             self, text="Todo List", font=("Arial", 16, "bold"))
 
         todoHomePage.todos = tk.Listbox(self)
+
         for i, k in enumerate(Todo.todohash.keys()):
             todoHomePage.todos.insert(i, k)
         todoHomePage.todos.bind("<Double-Button-1>", self.on_double_click)
@@ -58,8 +59,10 @@ class todoHomePage(tk.Frame):
         if len(Todo.todohash) != len(Todo.todolist):
             Todo.convert_dict_to_list()
         todoHomePage.one = tk.Toplevel()
-        tk.Checkbutton(todoHomePage.one, text=f"{Todo.todolist[0].title}", command=self.pop,font=("Arial",40)).grid()
-        tk.Label(todoHomePage.one, text=f"{Todo.todolist[0].describ}",font=("Arial",40)).grid()
+        tk.Checkbutton(todoHomePage.one, text=f"{
+                       Todo.todolist[0].title}", command=self.pop, font=("Arial", 40)).grid()
+        tk.Label(todoHomePage.one, text=f"{
+                 Todo.todolist[0].describ}", font=("Arial", 40)).grid()
 
     def pop(self):
         tmp = Todo.todolist.pop(0)

@@ -4,8 +4,8 @@ from todo import Todo
 
 class addtodo(tk.Toplevel):
 
-    def _init_(self, ):
-        super()._init_()
+    def __init__(self, ):
+        super().__init__()
         # self.root = tk.Tk()
 
         self.addTodoLebel = tk.Label(

@@ -6,6 +6,7 @@ from todoHomePage import todoHomePage
 from note import Note
 from todo import Todo
 
+
 class MainGui(tk.Tk):
     def __init__(self):
         super().__init__()
@@ -20,6 +21,7 @@ class MainGui(tk.Tk):
 
         self.tabControl.add(self.Note, text='note')
         self.tabControl.add(self.Todo, text='todo')
+
         self.tabControl.grid()
         # self.addNote = addNote(self)
         # self.addTodo = addTodo(self)
@@ -37,7 +39,6 @@ class MainGui(tk.Tk):
         Note.save()
         Todo.save()
         self.destroy()
-
 
 
 if __name__ == "__main__":
