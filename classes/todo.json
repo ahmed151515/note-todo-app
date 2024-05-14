@@ -1,14 +1,6 @@
 {
-    "learn": {
-        "descraibe": "learn c++"
-    },
-    "tasks 2": {
-        "descraibe": "learn c++"
-    },
-    "tasks 3": {
-        "descraibe": "learn c++"
-    },
-    "tasks 4": {
-        "descraibe": "learn c++"
-    }
+  "learn": "learn c++",
+  "tasks 2": "learn c++",
+  "tasks 3": "learn c++",
+  "tasks 4": "learn c++"
 }

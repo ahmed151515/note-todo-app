@@ -2,29 +2,23 @@ import json
 
 
 class Note():
-
-    def __init__(self, title, text):
-        self.title = title
-        self.text = text
+    notehash = dict()
 
     @classmethod
     def load(cls):
         with open("classes/note.json", "r")as f:
-            data = json.load(f)
-            result = []
-        for key, value in data.items():
-            result.append(Note(key, value["text"]))
-        return result
+            Note.notehash = json.load(f)
 
     @classmethod
-    def save(cls, list):
-        result = {}
+    def save(cls):
 
-        for task in list:
-            result[task.title] = {"text": task.text}
-
-            with open("classes/note.json", "w")as f:
-                json.dump(result, f, indent=4)
+        with open("classes/note.json", "w")as f:
+            json.dump(Note.notehash, f, indent=4)
 
     def __str__(self) -> str:
         return f"{self.title}:{self.text}"
+
+
+Note.load()
+
+

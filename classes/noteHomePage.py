@@ -7,7 +7,7 @@ class noteHomePage(tk.Frame):
 
         self.addNoteLebel = tk.Label(self, text="Notes", font=("Arial", 16, "bold"))
 
-        self.todos = tk.Text(self)
+        self.notes = tk.Listbox(self)
 
         self.buttonFrame = tk.Frame(self)
 
@@ -21,5 +21,5 @@ class noteHomePage(tk.Frame):
         self.buttonDelete.grid(row=0, column=1, padx=50, pady=50)
         self.buttonEdit.grid(row=0, column=2, padx=50, pady=50)
         self.buttonFrame.grid(row=2, column=0, padx=10, pady=10)
-        self.todos.grid(row=1, column=0, padx=10, pady=10)
+        self.notes.grid(row=1, column=0, padx=10, pady=10)
 

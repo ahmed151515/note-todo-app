@@ -1,26 +1,28 @@
 import tkinter as tk
+from todo import Todo
 
-class addTodo(tk.Frame):
-    def __init__(self, parent):
-        super().__init__(parent)
+
+class addTodo(tk.Toplevel):
+    def __init__(self, ):
+        super().__init__()
         # self.root = tk.Tk()
 
-
-        self.addTodoLebel = tk.Label(self, text="add Todo", font=("Arial", 16, "bold"))
+        self.addTodoLebel = tk.Label(
+            self, text="add Todo", font=("Arial", 16, "bold"))
 
         self.title = tk.Entry(self)
-        self.details = tk.Entry(self)
-        self.button = tk.Button(self, text='add')
+        self.descraibe = tk.Entry(self)
+        self.button = tk.Button(self, text='add', command=self.add_todo)
 
         self.addTodoLebel.pack(padx=10, pady=10)
-
 
         self.title.insert(0, "todo")
         self.title.pack(padx=10, pady=10)
 
-
-        self.details.insert(tk.END, "details")
-        self.details.pack(padx=10, pady=10)
+        self.descraibe.insert(tk.END, "descraibe")
+        self.descraibe.pack(padx=10, pady=10)
 
         self.button.pack(padx=10, pady=10)
 
+    def add_todo(self):
+        Todo.todohash[self.title.get()] = self.descraibe.get()
