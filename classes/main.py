@@ -4,11 +4,15 @@ from addNote import addNote
 from addTodo import addTodo
 from noteHomePage import noteHomePage
 from todoHomePage import todoHomePage
+from note import Note
+from todo import Todo
 
 class MainGui(tk.Tk):
     def __init__(self):
         super().__init__()
         self.title("Section project")
+
+        self.protocol("WM_DELETE_WINDOW", self.on_closing)
 
         self.tabControl = ttk.Notebook(self)
 
@@ -29,6 +33,13 @@ class MainGui(tk.Tk):
         # self.todoHomePage.pack(side=tk.RIGHT, fill=tk.BOTH, expand=True)
         #
         # self.tabControl.pack()
+
+    def on_closing(self):
+        Note.save()
+        Todo.save()
+        self.destroy()
+
+
 
 if __name__ == "__main__":
     main_gui = MainGui()
