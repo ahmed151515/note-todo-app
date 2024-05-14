@@ -3,13 +3,13 @@ class addNote(tk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
 
-        self.root = tk.Tk()
+        # self.root = tk.Tk()
 
-        self.addNoteLebel = tk.Label(self.root, text="add note", font=("Arial", 16, "bold"))
+        self.addNoteLebel = tk.Label(self, text="add note", font=("Arial", 16, "bold"))
         
-        self.title = tk.Entry(self.root)
-        self.text = tk.Text(self.root)
-        self.button = tk.Button(self.root, text='add')
+        self.title = tk.Entry(self)
+        self.text = tk.Text(self)
+        self.button = tk.Button(self, text='add')
         
         self.addNoteLebel.pack(padx=10, pady=10)
         

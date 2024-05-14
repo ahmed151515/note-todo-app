@@ -3,13 +3,13 @@ import tkinter as tk
 class noteHomePage(tk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
-        self.root = tk.Tk()
+        # self.root = tk.Tk()
 
-        self.addNoteLebel = tk.Label(self.root, text="Notes", font=("Arial", 16, "bold"))
+        self.addNoteLebel = tk.Label(self, text="Notes", font=("Arial", 16, "bold"))
 
-        self.todos = tk.Text(self.root)
+        self.todos = tk.Text(self)
 
-        self.buttonFrame = tk.Frame(self.root)
+        self.buttonFrame = tk.Frame(self)
 
         self.buttonAdd = tk.Button(self.buttonFrame, text='add')
         self.buttonDelete = tk.Button(self.buttonFrame, text='delete')
