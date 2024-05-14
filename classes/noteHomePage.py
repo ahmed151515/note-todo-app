@@ -1,4 +1,6 @@
 import tkinter as tk
+from note import Note
+from addNote import addNote
 
 class noteHomePage(tk.Frame):
     def __init__(self, parent):
@@ -11,7 +13,7 @@ class noteHomePage(tk.Frame):
 
         self.buttonFrame = tk.Frame(self)
 
-        self.buttonAdd = tk.Button(self.buttonFrame, text='add')
+        self.buttonAdd = tk.Button(self.buttonFrame, text='add', command=self.addNote)
         self.buttonDelete = tk.Button(self.buttonFrame, text='delete')
         self.buttonEdit = tk.Button(self.buttonFrame, text='edit')
 
@@ -23,3 +25,5 @@ class noteHomePage(tk.Frame):
         self.buttonFrame.grid(row=2, column=0, padx=10, pady=10)
         self.notes.grid(row=1, column=0, padx=10, pady=10)
 
+    def addNote(self):
+        addNote()
