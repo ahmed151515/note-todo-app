@@ -27,8 +27,9 @@ class addNote(tk.Toplevel):
         self.button.pack(padx=10, pady=10)
 
     def add_getter(self):
+        from noteHomePage import noteHomePage
         Ntitle = self.title.get()
         Ntext = self.text.get(1.0, "end-1c" )
         Note.notehash[Ntitle] = Ntext
-        Note.save()
+        noteHomePage.update_notes_list(Ntitle)
         self.destroy()
