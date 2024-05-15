@@ -23,6 +23,7 @@ class MainGui(tk.Tk):
         self.tabControl.add(self.Todo, text='todo')
 
         self.tabControl.grid()
+
         # self.addNote = addNote(self)
         # self.addTodo = addTodo(self)
         # self.noteHomePage = noteHomePage(self)
@@ -39,6 +40,8 @@ class MainGui(tk.Tk):
         Note.save()
         Todo.save()
         self.destroy()
+
+    
 
 
 if __name__ == "__main__":

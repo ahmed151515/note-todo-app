@@ -1,5 +1,6 @@
 import tkinter as tk
 from note import Note
+
 class addNote(tk.Toplevel):
     def __init__(self):
         super().__init__()

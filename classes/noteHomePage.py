@@ -22,12 +22,18 @@ class noteHomePage(tk.Frame):
         self.buttonSearch = tk.Button(self.buttonFrame, text='search', command=self.search_item)
 
         self.addNoteLabel.grid(row=0, column=0, padx=10, pady=10)
-
         self.buttonAdd.grid(row=0, column=0, padx=50, pady=50)
         self.buttonSearch.grid(row=0, column=1, padx=50, pady=50)
         self.buttonDelete.grid(row=0, column=2, padx=50, pady=50)
         self.buttonFrame.grid(row=2, column=0, padx=10, pady=10)
         self.notes.grid(row=1, column=0, padx=10, pady=10)
+
+        # self.update_notes_list()
+
+    def update_notes_list(self):
+        self.notes.delete(0, tk.END)  # Clear the listbox
+        for i, k in enumerate(Note.notehash.keys()):
+            self.notes.insert(i, k)
 
     def search_item(self):
 
@@ -63,6 +69,7 @@ class noteHomePage(tk.Frame):
             selected_title = self.notes.get(self.notes.curselection())
             del Note.notehash[selected_title]
             self.notes.delete(self.notes.curselection())
+            self.update_notes_list()
 
     # def edit(self):
     #
@@ -91,3 +98,4 @@ class noteHomePage(tk.Frame):
 
     def addNote(self):
         addNote()
+        self.update_notes_list()
