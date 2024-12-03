@@ -59,10 +59,8 @@ class todoHomePage(tk.Frame):
         if len(Todo.todohash) != len(Todo.todolist):
             Todo.convert_dict_to_list()
         todoHomePage.one = tk.Toplevel()
-        tk.Checkbutton(todoHomePage.one, text=f"{
-                       Todo.todolist[0].title}", command=self.pop, font=("Arial", 40)).grid()
-        tk.Label(todoHomePage.one, text=f"{
-                 Todo.todolist[0].describ}", font=("Arial", 40)).grid()
+        tk.Checkbutton(todoHomePage.one, text=f"{Todo.todolist[0].title}", command=self.pop, font=("Arial", 40)).grid()
+        tk.Label(todoHomePage.one, text=f"{Todo.todolist[0].describ}", font=("Arial", 40)).grid()
 
     def pop(self):
         tmp = Todo.todolist.pop(0)

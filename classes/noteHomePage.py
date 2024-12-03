@@ -53,8 +53,7 @@ class noteHomePage(tk.Frame):
 
     def on_double_click_search(self, event):
         selected_title = self.searchList.get(self.searchList.curselection())
-        messagebox.showinfo(f"{Note.notehash[selected_title]}", f"{
-                            Note.notehash[selected_title]}")
+        messagebox.showinfo(f"{Note.notehash[selected_title]}", f"{Note.notehash[selected_title]}")
 
     # def on_double_click_search(self, event):
     #     self.found_title = self.searchList.get(self.searchList.curselection())
@@ -97,8 +96,7 @@ class noteHomePage(tk.Frame):
         selected_title = noteHomePage.notes.get(
             noteHomePage.notes.curselection())
 
-        messagebox.showinfo(f"{Note.notehash[selected_title]}", f"{
-                            Note.notehash[selected_title]}")
+        messagebox.showinfo(f"{Note.notehash[selected_title]}", f"{Note.notehash[selected_title]}")
 
     def addNote(self):
         addNote()
